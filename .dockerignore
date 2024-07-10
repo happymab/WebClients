@@ -17,3 +17,6 @@
 !/packages/pack
 !/packages/config
 !/applications/pass-extension/manifest-chrome.json
+
+# devcontainer
+!/devcontainer/res/*
