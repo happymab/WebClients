@@ -1,0 +1,3 @@
+#! /usr/bin/sh
+dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+podman build -f "${dir}"/Dockerfile -t=devcontainer .

@@ -1,0 +1,19 @@
+#! /usr/bin/sh
+podman run \
+  --replace \
+  --net=host \
+  --userns=keep-id \
+  -v $(pwd):/home/$USER/Workspace:Z \
+  -v $XAUTHORITY:$XAUTHORITY:ro \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+  -v $(pwd)/.devcontainer/.vscode-server:/home/$USER/.vscode-server:Z \
+  --workdir=/home/$USER/Workspace \
+  -e "DISPLAY" \
+  -e "WAYLAND_DISPLAY" \
+  -e "XAUTHORITY" \
+  --security-opt label=type:container_runtime_t \
+  --name devcontainer \
+  -h devcontainer \
+  -it \
+  -t devcontainer
+
