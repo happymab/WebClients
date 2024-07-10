@@ -14,6 +14,6 @@ podman run \
   --security-opt label=type:container_runtime_t \
   --name devcontainer \
   -h devcontainer \
-  -it \
+  -d \
   -t devcontainer
 
